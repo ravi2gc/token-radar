@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot" aria-hidden="true"></span><h1>Token Launch Radar</h1></div>
+  <p class="sub" id="meta">Loading snapshot…</p>
+  <p class="disc">Implied values are this radar's own claim, fitted from the snapshot. The snapshot carries no airdrop flag: a protocol is said to record no token, never to have none, and a farm plan is a positioning plan, not a promise of a token.</p>
+</header>
+
+<section class="kpis" id="kpis" aria-label="Key figures"></section>
+
+<section class="controls" aria-label="Board controls">
+  <label>Search <input id="q" type="search" placeholder="name or slug…" autocomplete="off"></label>
+  <label>Category <select id="cat"><option value="">All categories</option></select></label>
+  <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+  <label>Status <select id="status">
+    <option value="pre-token" selected>Pre-token</option>
+    <option value="launched">Launched</option>
+    <option value="">All</option>
+  </select></label>
+  <label class="check">Watchlist only <input id="watch" type="checkbox"></label>
+  <label>Sort by <select id="sort">
+    <option value="value" selected>Expected value</option>
+    <option value="tvl">TVL</option>
+    <option value="growth">7-day growth</option>
+    <option value="age">Age</option>
+    <option value="odds">Token odds</option>
+  </select></label>
+  <button id="reset" type="button">Reset</button>
+</section>
+
+<p class="count" id="count"></p>
+<p class="error" id="error" hidden></p>
+
+<main>
+  <div class="tablewrap">
+    <table id="board">
+      <thead><tr>
+        <th class="num">Radar</th><th class="num">Rank</th><th>Protocol</th><th>Category</th>
+        <th>Chains</th><th class="num">TVL</th><th class="num">7d %</th><th class="num">Age</th>
+        <th class="num">Token odds</th><th class="num">Expected value</th><th class="num">Launch value</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="note" id="shownote"></p>
+
+  <section class="detail" id="detail" hidden></section>
+
+  <section class="method" id="method">
+    <h2>How the radar works</h2>
+    <div id="method-body"><p>Loading model…</p></div>
+  </section>
+</main>
+
+<footer>
+  <p>Source: DefiLlama protocol snapshot, fetched 2026-11-14. Floor for the watchlist: $50,000,000 TVL. Values are the entry's own claim, never make.fun's. No data leaves this page: it reads one local file, board.json.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
